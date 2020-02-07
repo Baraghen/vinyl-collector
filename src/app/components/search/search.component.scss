@@ -4,8 +4,17 @@
   align-items: center;
 
   .formContainer {
-    display: flex;
-    flex-flow: column;
     margin-bottom: 5%;
+    form {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  .outputContainer {
+    .searchOutput {
+      display: flex;
+      flex-flow: column;
+    }
   }
 }
