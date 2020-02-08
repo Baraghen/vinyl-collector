@@ -1,5 +1,10 @@
 <div class="container">
   <h1>Library</h1>
-  <div class="libraryOutput">
+  <div class="outputContainer" *ngIf="library">
+    <div class="libraryOutput" id="{{album.id}}" *ngFor="let album of library">
+      <h4>{{album.title}}</h4>
+      <h4>{{album.format}}</h4>
+      <img src="{{album.cover_image}}" alt="">
+    </div>
   </div>
 </div>

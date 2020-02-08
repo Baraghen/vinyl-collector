@@ -14,11 +14,11 @@
     </form>
   </div>
   <div class="outputContainer" *ngIf="results">
-    <div class="searchOutput" *ngFor="let album of results.results">
+    <div class="searchOutput" *ngFor="let album of results.results; let i = index;">
       <h4>{{album.title}}</h4>
       <h4>{{album.format[0]}}</h4>
       <img src="{{album.cover_image}}" alt="">
-      <button mat-raised-button color="primary">Add to library</button>
+      <button mat-raised-button color="primary" (click)="addAlbum(i)">Add to library</button>
     </div>
   </div>
 </div>

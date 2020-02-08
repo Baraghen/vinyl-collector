@@ -1,6 +1,6 @@
 export interface Album {
-  thumb: string;
-  format: string;
-  title: string;
-  genre: string;
+  cover_image?: string;
+  format?: string;
+  title?: string;
+  id?: string;
 }
