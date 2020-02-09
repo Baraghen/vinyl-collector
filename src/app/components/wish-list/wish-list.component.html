@@ -1,6 +1,16 @@
 <div class="container">
   <h1>Wish List</h1>
-  <div class="wishListContainer">
-
+  <div class="outputContainer" *ngIf="wishList">
+    <div class="wishListOutput">
+      <div class="album" id="{{album.id}}" *ngFor="let album of wishList; let i = index;">
+        <h4>{{album.title}}</h4>
+        <h4>{{album.format}}</h4>
+        <img src="{{album.cover_image}}" alt="">
+        <div class="btn-row">
+          <button mat-raised-button color="primary" (click)="addToLibrary(i, album.id)">Add to library</button>
+          <button mat-raised-button color="primary" (click)="removeFromWishList(album.id)">Remove from wish list</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

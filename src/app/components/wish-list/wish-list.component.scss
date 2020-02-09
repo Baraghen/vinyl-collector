@@ -2,7 +2,32 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  .wishListContainer {
+
+  .outputContainer {
+
+    .wishListOutput {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      .album {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 350px;
+
+        .btn-row {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+    }
 
   }
 }
