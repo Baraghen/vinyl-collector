@@ -2,7 +2,26 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  .libraryOutput {
+
+  .outputContainer {
+
+    .libraryOutput {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      .album {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 350px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+    }
 
   }
 }

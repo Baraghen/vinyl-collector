@@ -9,6 +9,9 @@ import { Album } from '../classes/album';
 })
 export class StorageService {
   musicCollection: AngularFirestoreCollection<Album>;
+  wishListCollection: AngularFirestoreCollection<Album>;
+  albumDoc: AngularFirestoreDocument<Album>;
+  wishList: Observable<Album[]>;
   albums: Observable<Album[]>;
 
   constructor(public afs: AngularFirestore) {
@@ -21,13 +24,35 @@ export class StorageService {
         return data;
       });
     }));
+
+    this.wishListCollection = this.afs.collection('wish-list');
+    this.wishList = this.wishListCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a=>{
+        const data = a.payload.doc.data() as Album;
+        data.id = a.payload.doc.id;
+        return data;
+      })
+    }))
   }
 
   getAlbums() {
     return this.albums;
   }
 
+  removeFromWishlist(id) {
+    this.albumDoc = this.afs.doc(`wish-list/${id}`);
+    this.albumDoc.delete();
+  }
+
   storeAlbum(album: Album) {
     this.musicCollection.add(album);
+  }
+
+  getWishlist() {
+    return this.wishList;
+  }
+
+  storeWishlist(album){
+    this.wishListCollection.add(album);
   }
 }

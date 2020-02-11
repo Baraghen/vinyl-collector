@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../../services/storage.service';
-import { Album} from '../../classes/album';
+import { Album } from '../../classes/album';
 
 @Component({
   selector: 'app-library',
@@ -15,7 +15,6 @@ export class LibraryComponent implements OnInit {
   ngOnInit() {
     this.db.getAlbums().subscribe(albums => {
       this.library = albums;
-      console.log(this.library)
     });
   }
 
