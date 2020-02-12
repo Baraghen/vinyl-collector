@@ -1,33 +1,53 @@
 .container {
   display: flex;
   flex-flow: column;
-  align-items: center;
+  text-align: center;
 
   .outputContainer {
 
     .wishListOutput {
       display: flex;
-      flex-flow: column;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       .album {
         display: flex;
         flex-flow: column;
         align-items: center;
-        width: 350px;
+        width: 30%;
+        margin: 10px;
+        padding: 20px 0;
+        background: #292929;
 
         .btn-row {
           display: flex;
-          justify-content: space-between;
-          width: 100%;
+          flex-flow: column;
+          width: 65%;
+        }
+
+        h4 {
+          margin: 0 0 10px;
         }
 
         img {
-          width: 100%;
+          width: 65%;
+          margin: auto 0;
         }
       }
 
     }
 
+  }
+}
+
+@media (max-width: 768px) {
+  .wishListOutput {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .album {
+      width: 100% !important;
+    }
   }
 }
