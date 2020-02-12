@@ -1,4 +1,10 @@
 .container {
   display: flex;
   flex-flow: column;
+
+  button {
+    width: 200px;
+    font-size: 24px;
+    margin: 20px 10px;
+  }
 }

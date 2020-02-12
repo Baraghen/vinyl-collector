@@ -14,13 +14,15 @@
     </form>
   </div>
   <div class="outputContainer" *ngIf="results">
-    <div class="searchOutput" *ngFor="let album of results.results; let i = index;">
-      <h4>{{album.title}}</h4>
-      <h4>{{album.format[0]}}</h4>
-      <img src="{{album.cover_image}}" alt="">
-      <div class="btn-row">
-        <button mat-raised-button color="primary" (click)="addToLibrary(i)">Add to library</button>
-        <button mat-raised-button color="primary" (click)="addToWishList(i)">Add to wish list</button>
+    <div class="searchOutput">
+      <div class="album" *ngFor="let album of results.results; let i = index;">
+        <h4>{{album.title}}</h4>
+        <h4>{{album.format}}</h4>
+        <img src="{{album.cover_image}}" alt="">
+        <div class="btn-row">
+          <button mat-raised-button color="primary" (click)="addToLibrary(i)">Add to library</button>
+          <button mat-raised-button color="primary" (click)="addToWishList(i)">Add to wish list</button>
+        </div>
       </div>
     </div>
   </div>

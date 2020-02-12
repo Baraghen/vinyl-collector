@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Library</h1>
   <div class="outputContainer" *ngIf="library">
+<!--TODO Add filter function via query to database-->
     <div class="libraryOutput">
       <div class="album" id="{{album.id}}" *ngFor="let album of library">
         <h4>{{album.title}}</h4>
