@@ -1,20 +1,33 @@
 .container {
   display: flex;
   flex-flow: column;
-  text-align: center;
+  align-items: center;
+  margin-top: 20px;
 
   .outputContainer {
+
+    .filterContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      width: 100%;
+      form {
+        width: 350px;
+        display: flex;
+        flex-flow: column;
+      }
+    }
 
     .libraryOutput {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
 
       .album {
         display: flex;
         flex-flow: column;
         align-items: center;
-        width: 30%;
+        width: 20%;
         margin: 10px;
         padding: 20px 0;
         background: #292929;
@@ -26,6 +39,41 @@
         img {
           width: 65%;
           margin: auto 0;
+        }
+
+        .btn-row {
+          display: flex;
+          flex-flow: column;
+          width: 65%;
+        }
+      }
+    }
+
+    .filteredLibraryOutput {
+      display: flex;
+      flex-flow: column;
+
+      .album {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 10px;
+        padding: 20px 0;
+        background: #292929;
+
+        h4 {
+          margin: 0 0 10px;
+        }
+
+        img {
+          width: 65%;
+          margin: auto 0;
+        }
+
+        .btn-row {
+          display: flex;
+          flex-flow: column;
+          width: 65%;
         }
       }
     }
@@ -41,6 +89,27 @@
     .album {
       width: 100% !important;
       margin: 10px 0 !important;
+
+      h4 {
+        margin: 0 10px !important;
+        text-align: center !important;
+      }
+    }
+  }
+
+  .filteredLibraryOutput {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .album {
+      width: 100% !important;
+      margin: 10px 0 !important;
+
+      h4 {
+        margin: 0 10px !important;
+        text-align: center !important;
+      }
     }
   }
 }

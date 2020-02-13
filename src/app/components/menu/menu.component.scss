@@ -32,6 +32,7 @@
       }
 
       .closeBtn {
+        display: block;
         position: absolute;
         top: 0;
         right: 15px;
@@ -47,7 +48,7 @@
     .menuIcon {
       display: block;
       z-index: 1;
-      top: 15px;
+      top: 10px;
       position: fixed;
       font-size: 50px;
     }
