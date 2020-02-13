@@ -1,7 +1,11 @@
 <div class="container">
-  <button mat-raised-button color="primary" routerLink="/search">Search</button>
-  <button mat-raised-button color="primary" routerLink="/library">Library</button>
-  <button mat-raised-button color="primary" routerLink="/wish-list">Wish list</button>
+  <div class="sideNav">
+      <mat-icon class="closeBtn" aria-hidden="false" aria-label="close menu button" (click)="closeNav()">close</mat-icon>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="item-selected" routerLink="/search" (click)="closeNav()">Search</a>
+      <a mat-list-item routerLinkActive="item-selected" routerLink="/library" (click)="closeNav()">Library</a>
+      <a mat-list-item routerLinkActive="item-selected" routerLink="/wish-list" (click)="closeNav()">Wish list</a>
+    </mat-nav-list>
+  </div>
+  <mat-icon class="menuIcon" aria-hidden="false" aria-label="menu" (click)="openNav()">menu</mat-icon>
 </div>
-
-<!--TODO Rewrite menu, change to angular materials-like menu-->

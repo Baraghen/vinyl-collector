@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
-import {WishListComponent} from './components/wish-list/wish-list.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
 
 
 const routes: Routes = [

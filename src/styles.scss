@@ -7,3 +7,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.item-selected {
+  color: #f48fb1 !important;
+  background: #292929;
+}
+
+a:focus {
+  color: #f48fb1 !important;
+  background: #ffffff0a;
+}
