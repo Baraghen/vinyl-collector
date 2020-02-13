@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
     this.album.format = this.results.results[id].format;
     this.album.cover_image = this.results.results[id].cover_image;
 
-    this.db.storeWishlist(this.album);
+    this.db.storeWishList(this.album);
   }
 
   ngOnInit() {

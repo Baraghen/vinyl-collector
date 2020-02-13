@@ -1,13 +1,35 @@
 <div class="container">
   <h1>Library</h1>
   <div class="outputContainer" *ngIf="library">
-<!--TODO Add filter function via query to database-->
-    <div class="libraryOutput">
+    <div class="filterContainer">
+      <form [formGroup]="filterForm" (ngSubmit)="filterMusic()">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput formControlName="filter">
+        </mat-form-field>
+          <button mat-stroked-button color="primary">Submit</button>
+          <button mat-stroked-button color="primary" (click)="clearFilter()">Clear filter</button>
+      </form>
+    </div>
+    <div class="libraryOutput" *ngIf="!filteredLibrary">
       <div class="album" id="{{album.id}}" *ngFor="let album of library">
         <h4>{{album.title}}</h4>
         <h4>{{album.format}}</h4>
         <img src="{{album.cover_image}}" alt="">
+        <div class="btn-row">
+          <button mat-raised-button color="primary" (click)="removeFromLibrary(album.id)">Remove from library</button>
+        </div>
       </div>
     </div>
+      <div class="filteredLibraryOutput" *ngIf="filteredLibrary">
+        <div class="album" id="{{albumF.id}}" *ngFor="let albumF of filteredLibrary">
+          <h4>{{albumF.title}}</h4>
+          <h4>{{albumF.format}}</h4>
+          <img src="{{albumF.cover_image}}" alt="">
+          <div class="btn-row">
+            <button mat-raised-button color="primary" (click)="removeFromLibrary(albumF.id)">Remove from library</button>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

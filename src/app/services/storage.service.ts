@@ -13,10 +13,13 @@ export class StorageService {
   albumDoc: AngularFirestoreDocument<Album>;
   wishList: Observable<Album[]>;
   albums: Observable<Album[]>;
+  filteredMusic;
 
   constructor(public afs: AngularFirestore) {
 
-    this.musicCollection = this.afs.collection('library');
+    this.musicCollection = this.afs.collection('library', ref => {
+      return ref.orderBy('title');
+    });
     this.albums = this.musicCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
         const data = a.payload.doc.data() as Album;
@@ -25,7 +28,9 @@ export class StorageService {
       });
     }));
 
-    this.wishListCollection = this.afs.collection('wish-list');
+    this.wishListCollection = this.afs.collection('wish-list', ref => {
+      return ref.orderBy('title');
+    });
     this.wishList = this.wishListCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
         const data = a.payload.doc.data() as Album;
@@ -39,8 +44,13 @@ export class StorageService {
     return this.albums;
   }
 
-  removeFromWishlist(id) {
+  removeFromWishList(id) {
     this.albumDoc = this.afs.doc(`wish-list/${id}`);
+    this.albumDoc.delete();
+  }
+
+  removeFromLibrary(id) {
+    this.albumDoc = this.afs.doc(`library/${id}`);
     this.albumDoc.delete();
   }
 
@@ -48,11 +58,11 @@ export class StorageService {
     this.musicCollection.add(album);
   }
 
-  getWishlist() {
+  getWishList() {
     return this.wishList;
   }
 
-  storeWishlist(album){
+  storeWishList(album) {
     this.wishListCollection.add(album);
   }
 }

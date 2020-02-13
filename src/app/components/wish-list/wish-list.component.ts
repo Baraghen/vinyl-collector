@@ -27,12 +27,12 @@ export class WishListComponent implements OnInit {
 
   removeFromWishList(id) {
     let albumRef = document.getElementById(id);
-    this.db.removeFromWishlist(id);
+    this.db.removeFromWishList(id);
     albumRef.remove();
   }
 
   ngOnInit() {
-    this.db.getWishlist().subscribe(albums => {
+    this.db.getWishList().subscribe(albums => {
       this.wishList = albums;
     });
   }
