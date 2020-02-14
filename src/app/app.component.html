@@ -1,6 +1,6 @@
 <div class="container">
   <div class="wrapperLeft">
-    <app-menu></app-menu>
+    <app-menu *ngIf="auth.user$ | async"></app-menu>
   </div>
   <div class="wrapperRight">
     <router-outlet></router-outlet>

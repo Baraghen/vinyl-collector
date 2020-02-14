@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
 import { LibraryComponent } from './components/library/library.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'search', component: SearchComponent },
-  { path: 'library', component: LibraryComponent },
-  { path: 'wish-list', component: WishListComponent }
+  { path: '', component: LoginComponent },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'library', component: LibraryComponent, canActivate: [AuthGuard] },
+  { path: 'wish-list', component: WishListComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -16,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [SearchComponent, LibraryComponent, WishListComponent];
+export const routingComponents = [LoginComponent, SearchComponent, LibraryComponent, WishListComponent];

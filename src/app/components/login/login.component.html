@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Vinyl Collector</h1>
+  <div *ngIf="auth.user$">
+    <button mat-raised-button color="primary" (click)="auth.googleSignIn()">Login with Google</button>
+  </div>
+</div>

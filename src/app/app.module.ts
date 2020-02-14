@@ -10,12 +10,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { environment } from '../environments/environment';
 
 import { ApiService } from './services/api.service';
 import { StorageService } from './services/storage.service';
+import { AuthService } from './services/auth.service';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -28,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     routingComponents,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MatSidenavModule,
     MatFormFieldModule,
     MatIconModule,
@@ -48,6 +51,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   providers: [
     ApiService,
+    AuthService,
     StorageService
   ],
   bootstrap: [AppComponent]
