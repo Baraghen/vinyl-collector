@@ -5,6 +5,7 @@
       <a mat-list-item routerLinkActive="item-selected" routerLink="/search" (click)="closeNav()">Search</a>
       <a mat-list-item routerLinkActive="item-selected" routerLink="/library" (click)="closeNav()">Library</a>
       <a mat-list-item routerLinkActive="item-selected" routerLink="/wish-list" (click)="closeNav()">Wish list</a>
+      <a mat-list-item routerLinkActive="item-selected" (click)="auth.signOut()">Logout</a>
     </mat-nav-list>
   </div>
   <mat-icon class="menuIcon" aria-hidden="false" aria-label="menu" (click)="openNav()">menu</mat-icon>
