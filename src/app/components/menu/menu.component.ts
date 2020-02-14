@@ -7,7 +7,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   openNav() {
     if (window.screen.width <= 768) {
