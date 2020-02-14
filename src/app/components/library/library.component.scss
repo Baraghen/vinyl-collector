@@ -51,7 +51,8 @@
 
     .filteredLibraryOutput {
       display: flex;
-      flex-flow: column;
+      flex-wrap: wrap;
+      justify-content: center;
 
       .album {
         display: flex;
