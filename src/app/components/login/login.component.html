@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>Vinyl Collector</h1>
-  <div *ngIf="auth.user$">
-    <button mat-raised-button color="primary" (click)="auth.googleSignIn()">Login with Google</button>
+  <div *ngIf="auth.user$ | async as user; else login">
+    <h1>Welcome, let's start collecting!</h1>
   </div>
+  <ng-template #login>
+    <h1>Vinyl Collector</h1>
+    <button mat-raised-button color="primary" (click)="auth.googleSignIn()">Login with Google</button>
+  </ng-template>
 </div>

@@ -36,7 +36,7 @@ export class AuthService {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     await this.router.navigate(['/library']);
-    await this.updateUserData(credential.user);
+    return this.updateUserData(credential.user);
   }
 
   async signOut() {
