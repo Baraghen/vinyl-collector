@@ -1,13 +1,15 @@
 .container {
   display: flex;
   flex-flow: column;
-  align-items: center;
+  text-align: center;
   margin-top: 20px;
 
   .formContainer {
+    display: flex;
     margin-bottom: 5%;
-    width: 350px;
+    justify-content: center;
     form {
+      width: 350px;
       display: flex;
       flex-flow: column;
     }
